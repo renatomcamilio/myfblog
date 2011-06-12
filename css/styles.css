@@ -1,0 +1,19 @@
+
+
+body {font:12px Helvetica, Arial !important; margin:0; padding:0; text-align:center;}
+
+#container{text-align:left; width:700px; margin:50px auto; padding-bottom:50px;}
+
+.note {background:#FAFAFA; border:1px solid #BABABA; margin:15px auto; padding-bottom:15px;}
+.note p {margin:0 10px;}
+.note h2 {margin:15px 10px;}
+.note .note-date {margin:15px 10px 0 10px; font-style:italic;}
+.note a{ color:#C66;}
+
+.fb_iframe_widget {width:100%;} 
+.fb_iframe_widget span, .fb_iframe_widget iframe {width:702px !important;}
+
+#paginacao {margin:auto;}
+.bt-paginacao {background:#FAFAFA; border:1px solid #BABABA; padding:10px; margin:0;}
+#bt-prox {float:right;}
+#bt-ant {left;}
