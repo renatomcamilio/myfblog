@@ -16,4 +16,4 @@ body {font:12px Helvetica, Arial !important; margin:0; padding:0; text-align:cen
 #paginacao {margin:auto;}
 .bt-paginacao {background:#FAFAFA; border:1px solid #BABABA; padding:10px; margin:0;}
 #bt-prox {float:right;}
-#bt-ant {left;}
+#bt-ant {float:left;}
