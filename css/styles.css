@@ -1,8 +1,16 @@
 
-
 body {font:12px Helvetica, Arial !important; margin:0; padding:0; text-align:center;}
+blockquote {color:#777; background-color:#FFF; font-style:italic;}
 
-#container{text-align:left; width:700px; margin:50px auto; padding-bottom:50px;}
+#container {text-align:left; width:900px; margin:50px auto; padding-bottom:50px;}
+#container #content {float:left; width:600px;}
+#container #sidebar {width:280px; height:450px; float:right; background:#FAFAFA; border:1px solid #BABABA; margin-top:15px;}
+
+#users {padding:5px;}
+#users .avatar {border:5px solid #BABABA; float:left}
+
+#fb_infos {font-weight:bold; vertical-align:top; margin:5px; float:left;}
+#fb_infos .location {}
 
 .note {background:#FAFAFA; border:1px solid #BABABA; margin:15px auto; padding-bottom:15px;}
 .note p {margin:0 10px;}
@@ -13,7 +21,7 @@ body {font:12px Helvetica, Arial !important; margin:0; padding:0; text-align:cen
 .fb_iframe_widget {width:100%;} 
 .fb_iframe_widget span, .fb_iframe_widget iframe {width:702px !important;}
 
-#paginacao {margin:auto;}
+#paginacao {width:600px;}
 .bt-paginacao {background:#FAFAFA; border:1px solid #BABABA; padding:10px; margin:0;}
 #bt-prox {float:right;}
 #bt-ant {float:left;}
