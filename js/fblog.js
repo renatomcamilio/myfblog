@@ -73,12 +73,16 @@ function notesData(url){
 //Box user, sidebar
 function getInfo(){
 	$.ajax({
-		url: 'https://graph.facebook.com/'+ user_id +'?access_token='+ accessToken +'&fields=name,work,location,birthday,picture',
+		url: 'https://graph.facebook.com/'+ user_id +'?access_token='+ accessToken +'&fields=name,work,location,birthday,picture,feed&limit=3',
 		dataType: 'jsonp',
 		async: true,
 		success: 
 			function(json){
-				$('#sidebar').append('<div id="users"><img class="avatar" src="'+ json.picture +'" /><div id="fb_infos"><span class="name">'+ json.name +'</span><br /><span class="location">'+ json.location.name +'</span></div></div>');
+				var bday = new Date(json.birthday),
+				today = new Date(),
+				bday = Math.round((((((today.valueOf() - bday.valueOf())/1000)/60)/60)/24)/365);
+				
+				$('#sidebar').append('<div id="users"><div class="user"><img class="avatar" src="'+ json.picture +'" /><div id="fb_infos"><ul><li>'+ json.name +'</li><li>'+ json.location.name +'</li><li>'+ json.work[0].employer.name +'</li><li>'+ bday +' anos</li></ul></div></div></div>');
 				console.log(json);
 			}
 	});

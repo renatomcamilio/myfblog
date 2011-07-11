@@ -1,5 +1,5 @@
 
-body {font:12px Helvetica, Arial !important; margin:0; padding:0; text-align:center;}
+body {font:12px Arial, sans-serif !important; margin:0; padding:0; text-align:center;}
 blockquote {color:#777; background-color:#FFF; font-style:italic;}
 
 #container {text-align:left; width:900px; margin:50px auto; padding-bottom:50px;}
@@ -8,9 +8,9 @@ blockquote {color:#777; background-color:#FFF; font-style:italic;}
 
 #users {padding:5px;}
 #users .avatar {border:5px solid #BABABA; float:left}
+#users #fb_infos ul {margin:0; padding:0; list-style:none;}
 
 #fb_infos {font-weight:bold; vertical-align:top; margin:5px; float:left;}
-#fb_infos .location {}
 
 .note {background:#FAFAFA; border:1px solid #BABABA; margin:15px auto; padding-bottom:15px;}
 .note p {margin:0 10px;}
