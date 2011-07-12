@@ -1,4 +1,4 @@
-
+* {margin:0; padding:0;}
 body {font:12px Arial, sans-serif !important; margin:0; padding:0; text-align:center;}
 blockquote {color:#777; background-color:#FFF; font-style:italic;}
 
@@ -7,10 +7,24 @@ blockquote {color:#777; background-color:#FFF; font-style:italic;}
 #container #sidebar {width:280px; height:450px; float:right; background:#FAFAFA; border:1px solid #BABABA; margin-top:15px;}
 
 #users {padding:5px;}
-#users .avatar {border:5px solid #BABABA; float:left}
-#users #fb_infos ul {margin:0; padding:0; list-style:none;}
+#users .avatar {border:5px solid #BABABA; float:left;}
 
-#fb_infos {font-weight:bold; vertical-align:top; margin:5px; float:left;}
+#users #fb_infos {font-weight:bold; vertical-align:top; margin:5px; float:left;}
+#users #fb_infos ul {margin:0; padding:0; list-style:none;}
+#users #fb_infos li {padding-left:19px}
+#users #fb_infos .name {background: url('../img/fb-sprite.png') no-repeat -26px -259px;}
+#users #fb_infos .location {background: url('../img/fb-sprite.png') no-repeat -26px -259px;}
+#users #fb_infos .work {background: url('../img/fb-sprite.png') no-repeat -26px -259px;}
+#users #fb_infos .age {background: url('../img/fb-sprite2.png') no-repeat -35px -110px; height:16px; width:15px; float:left;}
+
+#users #timeline {float:left;}
+
+#users #likebox {padding:5px; float:left;}
+#users #likebox ul {list-style:none;}
+#users #likebox .tv {border:3px solid #A34F3C;}
+#users #likebox .music {border:3px solid #3A4FC3;}
+#users #likebox .book {border:3px solid #3CF4A3;}
+#users #likebox .movie {border:3px solid #F4A33C;}
 
 .note {background:#FAFAFA; border:1px solid #BABABA; margin:15px auto; padding-bottom:15px;}
 .note p {margin:0 10px;}

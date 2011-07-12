@@ -73,7 +73,7 @@ function notesData(url){
 //Box user, sidebar
 function getInfo(){
 	$.ajax({
-		url: 'https://graph.facebook.com/'+ user_id +'?access_token='+ accessToken +'&fields=name,work,location,birthday,picture,feed&limit=3',
+		url: 'https://graph.facebook.com/'+ user_id +'?access_token='+ accessToken +'&fields=name,work,location,birthday,events,picture,music,movies,television,books,feed&limit=3',
 		dataType: 'jsonp',
 		async: true,
 		success: 
@@ -82,8 +82,52 @@ function getInfo(){
 				today = new Date(),
 				bday = Math.round((((((today.valueOf() - bday.valueOf())/1000)/60)/60)/24)/365);
 				
-				$('#sidebar').append('<div id="users"><div class="user"><img class="avatar" src="'+ json.picture +'" /><div id="fb_infos"><ul><li>'+ json.name +'</li><li>'+ json.location.name +'</li><li>'+ json.work[0].employer.name +'</li><li>'+ bday +' anos</li></ul></div></div></div>');
 				console.log(json);
+				
+				$('#sidebar')
+				.append('<div id="users">' +
+							'<div class="user">' +
+								'<img class="avatar" src="'+ json.picture +'" />' +
+								'<div id="fb_infos">' +
+									'<ul><li class="name">'+ json.name +'</li>' +
+									'<li class="location">'+ json.location.name +'</li>' +
+									'<li class="work">'+ json.work[0].employer.name +'</li>' +
+									'<span class="age"></span><li>'+ bday +' anos</li></ul>' +
+								'</div>' +
+								'<div id="timeline"></div>' +
+								'<div id="likebox">' +
+									'<div class="tv"><ul></ul></div>' +
+									'<div class="music"><ul></ul></div>' +
+									'<div class="book"><ul></ul></div>' +
+									'<div class="movie"><ul></ul></div>' +
+								'</div>' +
+						'</div></div>');
+				
+			//timeline 
+				var tmline = json.feed.data;
+				for(var i = 0, max = tmline.length; i < max; i++){
+					$('.user #timeline')
+					.append('<strong>' + tmline[i].from.name + '</strong><br />'+ tmline[i].message + '<br />');
+				}
+			//likebox
+			//tv likes
+				var liketv = json.television.data;
+				for(var i = 0, max = liketv.length; i < max; i++){
+					$('#likebox .tv ul')
+					.append('<li>'+ liketv[i].name +'</li>');
+				}
+			//music likes
+				var likemusic = json.music.data;
+				for(var i = 0, max = likemusic.length; i < max; i++){
+					$('#likebox .music ul')
+					.append('<li>'+ likemusic[i].name +'</li>');
+				}
+			//book likes
+				var likebook = json.books.data;
+				for(var i = 0, max = likebook.length; i < max; i++){
+					$('#likebox .book ul')
+					.append('<li>'+ likebook[i].name +'</li>');
+				}
 			}
 	});
 }
