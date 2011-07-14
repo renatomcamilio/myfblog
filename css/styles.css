@@ -11,11 +11,11 @@ blockquote {color:#777; background-color:#FFF; font-style:italic;}
 
 #users #fb_infos {font-weight:bold; vertical-align:top; margin:5px; float:left;}
 #users #fb_infos ul {margin:0; padding:0; list-style:none;}
-#users #fb_infos li {padding-left:19px}
-#users #fb_infos .name {background: url('../img/fb-sprite.png') no-repeat -26px -259px;}
-#users #fb_infos .location {background: url('../img/fb-sprite.png') no-repeat -26px -259px;}
-#users #fb_infos .work {background: url('../img/fb-sprite.png') no-repeat -26px -259px;}
-#users #fb_infos .age {background: url('../img/fb-sprite2.png') no-repeat -35px -110px; height:16px; width:15px; float:left;}
+#users #fb_infos li {clear:both;}
+#users #fb_infos .name {background: url('../img/fb-sprite2.png') no-repeat -132px -109px; height:14px; width:13px; float:left;}
+#users #fb_infos .location {background: url('../img/fb-sprite.png') no-repeat -19px -275px; height: 14px; width:13px; float:left;}
+#users #fb_infos .work {background: url('../img/fb-sprite.png') no-repeat -26px -259px; height:14px; width:13px; float:left;}
+#users #fb_infos .age {background: url('../img/fb-sprite2.png') no-repeat -35px -110px; height:16px; width:17px; float:left;}
 
 #users #timeline {float:left;}
 

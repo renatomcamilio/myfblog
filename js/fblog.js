@@ -89,10 +89,10 @@ function getInfo(){
 							'<div class="user">' +
 								'<img class="avatar" src="'+ json.picture +'" />' +
 								'<div id="fb_infos">' +
-									'<ul><li class="name">'+ json.name +'</li>' +
-									'<li class="location">'+ json.location.name +'</li>' +
-									'<li class="work">'+ json.work[0].employer.name +'</li>' +
-									'<span class="age"></span><li>'+ bday +' anos</li></ul>' +
+									'<ul><li><span class="name"></span>'+ json.name +'</li>' +
+									'<li><span class="location"></span>'+ json.location.name +'</li>' +
+									'<li><span class="work"></span>'+ json.work[0].employer.name +'</li>' +
+									'<li><span class="age"></span>'+ bday +' anos</li></ul>' +
 								'</div>' +
 								'<div id="timeline"></div>' +
 								'<div id="likebox">' +
@@ -109,24 +109,30 @@ function getInfo(){
 					$('.user #timeline')
 					.append('<strong>' + tmline[i].from.name + '</strong><br />'+ tmline[i].message + '<br />');
 				}
-			//likebox
-			//tv likes
+		//likebox
+			//tv-show likes
 				var liketv = json.television.data;
 				for(var i = 0, max = liketv.length; i < max; i++){
 					$('#likebox .tv ul')
 					.append('<li>'+ liketv[i].name +'</li>');
 				}
-			//music likes
+			//musics likes
 				var likemusic = json.music.data;
 				for(var i = 0, max = likemusic.length; i < max; i++){
 					$('#likebox .music ul')
 					.append('<li>'+ likemusic[i].name +'</li>');
 				}
-			//book likes
+			//books likes
 				var likebook = json.books.data;
 				for(var i = 0, max = likebook.length; i < max; i++){
 					$('#likebox .book ul')
 					.append('<li>'+ likebook[i].name +'</li>');
+				}
+			//movies likes
+				var likemovie = json.movies.data;
+				for(var i = 0, max = likemovie.length; i < max; i++){
+					$('#likebox .movie ul')
+					.append('<li>'+ likemovie[i].name +'</li>');
 				}
 			}
 	});
