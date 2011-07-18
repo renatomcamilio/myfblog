@@ -29,23 +29,22 @@ function notesData(url){
 		success: 
 			function(json){
 				$('#content').empty();
+
 				$.each(json.data, function(i, note){
-					var data = new Date(note.created_time);
-					var dia = (data.getDate() < 10 ? '0'+(data.getDate()) : data.getDate());
-					var mes = data.getMonth()+1;
-					var ano = data.getFullYear();
-					var hora = data.getHours();
-					var minuto = (data.getMinutes() < 10 ? '0'+(data.getMinutes()) : data.getMinutes());
+					var dt = new Date(note.created_time);
+					var dia = (dt.getDate() < 10 ? '0'+(dt.getDate()) : dt.getDate());
+					var mes = dt.getMonth()+1;
+					var ano = dt.getFullYear();
+					var hora = dt.getHours();
+					var minuto = (dt.getMinutes() < 10 ? '0'+(dt.getMinutes()) : dt.getMinutes());
 					
 					$('#content').append(
-						'<div id="'+ note.id +'" class="note"><h2>'+ note.subject +'</h2><div class="note-date">Postado em '+ dia + '/' + mes + '/' + ano + ' às ' + hora + 'h' + minuto +'.</div><br /><div>'+ note.message  
-						+ '</div></div>');
-					
-
-					//$('#content').append('<fb:comments href="http://www.facebook.com/note.php?note_id='+ note.id +'" num_posts="'+num_comments+'"></fb:comments>');							
-					
-					//<fb:like href="http://www.facebook.com/note.php?note_id='+ note.id +'" send="false" layout="button_count" show_faces="false"></fb:like>
-					//
+						'<div id="'+ note.id +'" class="note">' +
+							'<h2>'+ note.subject +'</h2>' +
+							'<div class="note-date">Postado em '+ dia + '/' + mes + '/' + ano + ' às ' + hora + 'h' + minuto +'.</div>' +
+							'<br />' +
+							'<div>'+ note.message + '</div>' +
+						'</div>');
 					
 				});
 				
@@ -82,8 +81,6 @@ function getInfo(){
 				today = new Date(),
 				bday = Math.round((((((today.valueOf() - bday.valueOf())/1000)/60)/60)/24)/365);
 				
-				console.log(json);
-				
 				$('#sidebar')
 				.append('<div id="users">' +
 							'<div class="user">' +
@@ -95,45 +92,47 @@ function getInfo(){
 									'<li><span class="age"></span>'+ bday +' anos</li></ul>' +
 								'</div>' +
 								'<div id="timeline"></div>' +
-								'<div id="likebox">' +
-									'<div class="tv"><ul></ul></div>' +
-									'<div class="music"><ul></ul></div>' +
-									'<div class="book"><ul></ul></div>' +
-									'<div class="movie"><ul></ul></div>' +
-								'</div>' +
-						'</div></div>');
+							'</div>' +
+						'</div>' +
+						'<div id="likebox">' +
+							'<div class="tv"><ul></ul></div>' +
+							'<div class="music"><ul></ul></div>' +
+							'<div class="book"><ul></ul></div>' +
+							'<div class="movie"><ul></ul></div>' +
+						'</div>');
 				
-			//timeline 
+				//timeline 
 				var tmline = json.feed.data;
 				for(var i = 0, max = tmline.length; i < max; i++){
 					$('.user #timeline')
 					.append('<strong>' + tmline[i].from.name + '</strong><br />'+ tmline[i].message + '<br />');
 				}
-		//likebox
-			//tv-show likes
+				//likebox
+				//tv-show likes
 				var liketv = json.television.data;
-				for(var i = 0, max = liketv.length; i < max; i++){
+				console.log(liketv);
+				//for(var i = 0, max = liketv.length; i < max; i++){
 					$('#likebox .tv ul')
-					.append('<li>'+ liketv[i].name +'</li>');
-				}
-			//musics likes
+					.append('<li>'+ liketv[0].name +'</li>');
+				//}
+				//musics likes
 				var likemusic = json.music.data;
-				for(var i = 0, max = likemusic.length; i < max; i++){
+				//for(var i = 0, max = likemusic.length; i < max; i++){
 					$('#likebox .music ul')
-					.append('<li>'+ likemusic[i].name +'</li>');
-				}
-			//books likes
+					.append('<li>'+ likemusic[0].name +'</li>');
+				//}
+				//books likes
 				var likebook = json.books.data;
-				for(var i = 0, max = likebook.length; i < max; i++){
+				//for(var i = 0, max = likebook.length; i < max; i++){
 					$('#likebox .book ul')
-					.append('<li>'+ likebook[i].name +'</li>');
-				}
-			//movies likes
+					.append('<li>'+ likebook[0].name +'</li>');
+				//}
+				//movies likes
 				var likemovie = json.movies.data;
-				for(var i = 0, max = likemovie.length; i < max; i++){
+				//for(var i = 0, max = likemovie.length; i < max; i++){
 					$('#likebox .movie ul')
-					.append('<li>'+ likemovie[i].name +'</li>');
-				}
+					.append('<li>'+ likemovie[0].name +'</li>');
+				//}
 			}
 	});
 }
