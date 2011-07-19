@@ -8,7 +8,7 @@ ol, ul {list-style-position:inside}
 #container #sidebar {width:280px; float:right; margin-top:15px;}
 
 /* SIDEBAR USERS, LIKEBOX */
-#sidebar #users {background:#FAFAFA; border:1px solid #BABABA; padding:5px; height:170px;}
+#sidebar #users {background:#FAFAFA; border:1px solid #BABABA; padding:5px; height:170px;width:280px;}
 #sidebar #users .avatar {border:5px solid #BABABA; float:left;}
 
 #sidebar #users #fb_infos {font-weight:bold; vertical-align:top; margin:5px; float:left;}
@@ -21,12 +21,23 @@ ol, ul {list-style-position:inside}
 
 #sidebar #users #timeline {float:left;}
 
-#sidebar #likebox {background:#FAFAFA; border:1px solid #BABABA; padding:5px; float:left;}
+#sidebar #likebox {background:#FAFAFA; border:1px solid #BABABA; padding:5px; float:left;width:280px;margin-top:5px;}
 #sidebar #likebox ul {list-style:none;}
-#sidebar #likebox .tv {border:3px solid #A34F3C;}
-#sidebar #likebox .music {border:3px solid #3A4FC3;}
-#sidebar #likebox .book {border:3px solid #3CF4A3;}
-#sidebar #likebox .movie {border:3px solid #F4A33C;}
+#sidebar #likebox .like_category {margin-top:10px;}
+#sidebar #likebox .like_category h4.category_title {border-top: 1px solid #CCC; color:#777; font-size: 14px; background-color: #EEEEEE; padding:3px; cursor:pointer;}
+#sidebar #likebox .like_category ul.presentation {padding-left:8px;margin-top: 5px;display:none;}
+#sidebar #likebox .like_category ul.presentation li div.title_page {font-weight:bold; color: #333; cursor: pointer}
+#sidebar #likebox .like_category ul.presentation li { margin-bottom: 8px;}
+#sidebar #likebox .like_category ul.presentation li ul.page_options { margin: 5px;display:none; }
+#sidebar #likebox .like_category ul.presentation li ul.page_options li { margin:0px;}
+#sidebar #likebox .like_category ul.presentation li ul.page_options li a { cursor:pointer;color:#778;font-weight:bold;font-size:11px;height:11px;line-height:11px;margin:0px;text-decoration:none;}
+#sidebar #likebox .like_category ul.presentation li .feed,
+#sidebar #likebox .like_category ul.presentation li .notes {margin: 5px 10px;}
+#sidebar #likebox .like_category ul.presentation li .feed div,
+#sidebar #likebox .like_category ul.presentation li .notes div {margin-top:10px;font-size:10px;color:#555;border-bottom:1px solid #EEE}
+#sidebar #likebox .like_category ul.presentation li .feed div span.feed_by,
+#sidebar #likebox .like_category ul.presentation li .notes div span.feed_by{color:#333; text-align:right;float:right;}
+.feed, .notes {display: none;}
 
 /* NOTES */
 .note {background:#FAFAFA; border:1px solid #BABABA; margin:15px auto; padding-bottom:15px;}
@@ -43,3 +54,5 @@ ol, ul {list-style-position:inside}
 .bt-paginacao {background:#FAFAFA; border:1px solid #BABABA; padding:10px; margin:0;}
 #bt-prox {float:right;}
 #bt-ant {float:left;}
+
+h3#likes {padding-left:30px;background: url('../img/fb-like-small.jpg') no-repeat 5px center;height:25px;line-height:25px;}
