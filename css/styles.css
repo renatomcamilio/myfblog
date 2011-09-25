@@ -1,16 +1,21 @@
-* {margin:0; padding:0;}
-body {font:12px Arial, sans-serif !important; margin:0; padding:0; text-align:center;}
+* {margin:0; padding:0;border:0;}
+body {font:12px "Lucida Grande", "Trebuchet MS", Verdana, sans-serif; margin:0; padding:0; text-align:center;}
 blockquote {color:#777; background-color:#FFF; font-style:italic; margin:20px}
 ol, ul {list-style-position:inside}
 
-#container {text-align:left; width:900px; margin:50px auto; padding-bottom:50px;}
+#bt-login {display:block; border:1px solid #29447E; position:absolute; top:10px; left:10px; height:22px; width:100px; background-color:#3B5998; cursor:pointer;}
+#bt-login img {float:left; border-right:1px solid #29447E;}
+#bt-login span {display:block; color:#FFF; font:bold 17px "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;}
+
+#container {text-align:left; width:900px; margin:50px auto; padding-bottom:50px; display:none;}
 #container #content {float:left; width:600px;}
 #container #sidebar {width:280px; float:right; margin-top:15px;}
 
 /* SIDEBAR USERS, LIKEBOX */
-#sidebar #users {background:#FAFAFA; border:1px solid #BABABA; padding:5px; height:170px;width:280px;}
+#sidebar #users {background:#FAFAFA; border:1px solid #BABABA; padding:5px; width:280px;}
 #sidebar #users .avatar {border:5px solid #BABABA; float:left;}
 
+#sidebar #users .user { height:60px; margin-bottom:10px; }
 #sidebar #users #fb_infos {font-weight:bold; vertical-align:top; margin:5px; float:left;}
 #sidebar #users #fb_infos ul {margin:0; padding:0; list-style:none;}
 #sidebar #users #fb_infos li {clear:both;}

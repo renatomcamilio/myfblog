@@ -1,3 +1,0 @@
-1- https://www.facebook.com/dialog/oauth?client_id=202413536445428&redirect_uri=http://localhost/fblog.grudaemmim.com.br/&scope=offline_access,user_notes,user_events,read_stream,user_work_history,user_location,user_birthday,user_likes&response_type=token
-
-2- utilizar o access token gerado.
