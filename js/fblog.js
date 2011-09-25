@@ -68,7 +68,7 @@ function notesData(url){
         async: true,
         success: function(json){
             $('#content').empty();
-console.log(json);
+
             $.each(json.data, function(i, note){
                 var dt = new Date(note.created_time);
                 var dia = (dt.getDate() < 10 ? '0'+(dt.getDate()) : dt.getDate());
