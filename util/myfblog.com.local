@@ -1,0 +1,13 @@
+<VirtualHost *:80>
+	ServerAdmin webmaster@localhost
+    	ServerName myfblog.com.local
+
+	DocumentRoot /var/www/myfblog/
+	<Directory /var/www/myblog/>
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride All
+		Order allow,deny
+		allow from all
+	</Directory>
+
+</VirtualHost>
