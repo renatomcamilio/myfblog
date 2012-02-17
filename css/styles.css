@@ -15,7 +15,7 @@ ol, ul {list-style-position:inside}
 #sidebar #users {background:#FAFAFA; border:1px solid #BABABA; padding:5px; width:280px;}
 #sidebar #users .avatar {border:5px solid #BABABA; float:left;}
 
-#sidebar #users .user { height:60px; margin-bottom:10px; }
+#sidebar #users .user { margin-bottom:10px; display: inline-block; }
 #sidebar #users #fb_infos {font-weight:bold; vertical-align:top; margin:5px; float:left;}
 #sidebar #users #fb_infos ul {margin:0; padding:0; list-style:none;}
 #sidebar #users #fb_infos li {clear:both;}
