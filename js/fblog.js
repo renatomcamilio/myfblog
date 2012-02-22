@@ -1,5 +1,4 @@
-var accessToken = '',
-	offset = 0,
+var offset = 0,
 	total = 0,
 	connected = false,
 	notes_per_page = 2;
@@ -17,12 +16,11 @@ $( function () {
 			FB.login( function ( response ) {
 				if ( response.authResponse ) {
 					connected = true;
-					accessToken = 'access_token=' + response.authResponse.accessToken;
 
 					$( '#bt-login span' ).html( 'Log Out' );
 					$( '#container' ).fadeIn( 'slow' );
-					$( "h4.category_title" ).click( function () {
-						$(this).siblings( "ul" ).slideToggle();
+					$( 'h4.category_title' ).click( function () {
+						$( this ).siblings( 'ul' ).slideToggle();
 					});
 					getNotes();
 					getInfo();
@@ -94,7 +92,7 @@ function notesData ( offset ) {
 
 function monta_pagina ( dom_id, options ) {
 	FB.api( '/' + options.id, { fields: options.fields }, function ( json ) {
-		$( dom_id + " ul.presentation" ).append(
+		$( dom_id + ' ul.presentation' ).append(
 			'<li id="page_' + options.id + '">\
 				<div class="title_page" onclick="mostra_opcoes(this)">' + options.name + '</div>\
 				<div><img style="float:left;padding-right:5px;" src="' + json.picture + '" />\
@@ -116,30 +114,30 @@ function monta_pagina ( dom_id, options ) {
 }
 
 function load_feed ( id ) {
-	if ( $( "#page_" + id ).find( 'div.feed' ).val() == '' ) {
-		$( "#page_" + id ).find( 'div.feed' ).val( '1' );
+	if ( $( '#page_' + id ).find( 'div.feed' ).val() == '' ) {
+		$( '#page_' + id ).find( 'div.feed' ).val( '1' );
 		FB.api( '/' + id + '/feed', function ( json ) {
 			$( json.data ).each( function ( i, val ) {
-				$( "#page_" + id ).find( 'div.feed' ).append( '<div><span>' + val.message + '</span><br/><span class="feed_by">' + val.from.name + '</span><div style="clear:both"></div></div>' );
+				$( '#page_' + id ).find( 'div.feed' ).append( '<div><span>' + val.message + '</span><br/><span class="feed_by">' + val.from.name + '</span><div style="clear:both"></div></div>' );
 			});
-			$( "#page_" + id ).find( 'div.feed' ).slideDown();
+			$( '#page_' + id ).find( 'div.feed' ).slideDown();
 		});
 	} else {
-		$( "#page_" + id ).find( 'div.feed' ).slideToggle();
+		$( '#page_' + id ).find( 'div.feed' ).slideToggle();
 	}
 }
 
 function load_notes ( id ) {
-	if( $( "#page_" + id ).find( 'div.notes' ).val() == '' ) {
-		$( "#page_" + id ).find( 'div.notes' ).val( '1' );
+	if( $( '#page_' + id ).find( 'div.notes' ).val() == '' ) {
+		$( '#page_' + id ).find( 'div.notes' ).val( '1' );
 		FB.api( '/' + id + '/notes', function ( json ) {
 			$( json.data ).each( function ( i, val ) {
-			   $( "#page_" + id ).find( 'div.notes' ).append( '<div><span>' + val.message + '</span><br/><span class="feed_by">' + val.from.name + '</span><div style="clear:both"></div></div>' );
+			   $( '#page_' + id ).find( 'div.notes' ).append( '<div><span>' + val.message + '</span><br/><span class="feed_by">' + val.from.name + '</span><div style="clear:both"></div></div>' );
 			});
-			$( "#page_" + id ).find( 'div.notes' ).slideDown();
+			$( '#page_' + id ).find( 'div.notes' ).slideDown();
 		});
 	} else {
-		$( "#page_" + id ).find( 'div.notes' ).slideToggle();
+		$( '#page_' + id ).find( 'div.notes' ).slideToggle();
 	}
 }
 
@@ -173,7 +171,7 @@ function getInfo () {
 			if ( tmline[i].message == undefined ) {
 			   
 			} else {
-				$( '#timeline' ).append( '<strong>' + tmline[i].from.name + '</strong><br />'+ tmline[i].message + '<br />' );
+				$( '#timeline' ).append( '<strong>' + tmline[i].from.name + '</strong><br />' + tmline[i].message + '<br />' );
 			}
 		}
 		$( '#users .user' ).animate({
@@ -183,7 +181,7 @@ function getInfo () {
 		//likebox
 		var liketv = json.television.data;
 		for( var i = 0, max = liketv.length; i < max; i += 1 ) {
-			monta_pagina( "#tv", {
+			monta_pagina( '#tv', {
 				'id': liketv[i].id ,
 				'name': liketv[i].name,
 				'fields':'feed,notes,picture'
@@ -192,7 +190,7 @@ function getInfo () {
 		
 		var likemusic = json.music.data;
 		for ( var i = 0, max = likemusic.length; i < max; i++ ) {
-			monta_pagina( "#music", {
+			monta_pagina( '#music', {
 				'id': likemusic[i].id ,
 				'name': likemusic[i].name,
 				'fields':'feed,notes,picture'
@@ -201,7 +199,7 @@ function getInfo () {
 		
 		var likebook = json.books.data;
 		for ( var i = 0, max = likebook.length; i < max; i++ ) {
-			monta_pagina( "#book", {
+			monta_pagina( '#book', {
 				'id': likebook[i].id ,
 				'name': likebook[i].name,
 				'fields':'feed,notes,picture'
@@ -210,7 +208,7 @@ function getInfo () {
 		
 		var likemovie = json.movies.data;
 		for ( var i = 0, max = likemovie.length; i < max; i++ ) {
-			monta_pagina( "#movie", {
+			monta_pagina( '#movie', {
 				'id': likemovie[i].id ,
 				'name': likemovie[i].name,
 				'fields':'feed,notes,picture'
